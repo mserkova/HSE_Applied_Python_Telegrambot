@@ -22,5 +22,54 @@ async def main():
     print("Бот запущен!")
     await dp.start_polling(bot)
 
+
+
+# === ВЕБ-СЕРВЕР ДЛЯ RENDER ===
+from aiohttp import web
+
+async def health_check(request):
+    """Эндпоинт для проверки работоспособности."""
+    return web.Response(text="OK")
+
+async def start_web_server():
+    """Запускает веб-сервер на порту из переменной окружения."""
+    app = web.Application()
+    app.router.add_get("/", health_check)
+    port = int(os.getenv("PORT", 8000))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+    print(f"🌐 Веб-сервер запущен на порту {port}")
+
+
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    import os
+    # Запускаем бота и веб-сервер одновременно
+    loop = asyncio.get_event_loop()
+    loop.create_task(main())
+    loop.run_until_complete(start_web_server())
+    loop.run_forever()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
