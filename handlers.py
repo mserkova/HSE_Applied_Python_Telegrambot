@@ -36,12 +36,14 @@ router = Router()
 # === Обработчик команды /start === 
 @router.message(Command("start"))
 async def cmd_start(message: Message):
+     print(f"Получено сообщение: /start")
     await message.reply("Добро пожаловать! Я ваш HealthyBot.\nВведите /help для списка команд.")    
 
 
 # === Обработчик команды /help ===
 @router.message(Command("help"))
 async def cmd_help(message: Message):
+    print(f"Получено сообщение: /help")
     commands = [
         "/start - Начало работы",
         "/set_profile - Настроить профиль (вес, рост, возраст, активность, город)",
