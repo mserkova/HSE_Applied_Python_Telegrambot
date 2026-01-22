@@ -2,17 +2,25 @@
 
 ## Состав проекта
 
-HSE_Applied_Python_Telegrambot/
-├── bot.py # Точка входа: инициализация бота, диспетчера, middleware
-├── config.py # Загрузка переменных окружения (.env)
-├── handlers.py # Все обработчики команд и FSM-диалогов
-├── states.py # FSM-состояния (профиль, вода, тренировки)
-├── middlewares.py # Middleware для логирования сообщений и callback-запросов
-├── requirements.txt # Зависимости проекта
-├── runtime.txt # Версия Python для Render.com
-├── Procfile # Инструкция запуска для Render
-├── Deploy1 # Скриншот деплоя на Render.com 
-└── Screenshots/ # Скриншоты работы бота 
+── bot.py # Точка входа: инициализация бота, диспетчера, middleware
+
+── config.py # Загрузка переменных окружения (.env)
+
+── handlers.py # Все обработчики команд и FSM-диалогов
+
+── states.py # FSM-состояния (профиль, вода, тренировки)
+
+── middlewares.py # Middleware для логирования сообщений и callback-запросов
+
+── requirements.txt # Зависимости проекта
+
+── runtime.txt # Версия Python для Render.com
+
+── Procfile # Инструкция запуска для Render
+
+── Deploy1 # Скриншот деплоя на Render.com 
+
+── Screenshots/ # Скриншоты работы бота 
 
 
 ## Основные обработчики команд
