@@ -36,7 +36,7 @@ router = Router()
 # === Обработчик команды /start === 
 @router.message(Command("start"))
 async def cmd_start(message: Message):
-     print(f"Получено сообщение: /start")
+    print(f"Получено сообщение: /start")
     await message.reply("Добро пожаловать! Я ваш HealthyBot.\nВведите /help для списка команд.")    
 
 
